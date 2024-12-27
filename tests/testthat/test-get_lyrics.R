@@ -26,7 +26,7 @@ test_that("get_lyrics_url returns the right output formats", {
   expect_is(output, "tbl")
   expect_is(output, "data.frame")
   expect_setequal(output$song_lyrics_url, url)
-
+  expect_true(nrow(output) > 0)
 })
 
 test_that("get_lyrics_search returns the right output formats", {
@@ -38,4 +38,5 @@ test_that("get_lyrics_search returns the right output formats", {
   expect_is(output, "tbl_df")
   expect_is(output, "tbl")
   expect_is(output, "data.frame")
+  expect_true(nrow(output) > 0)
 })
